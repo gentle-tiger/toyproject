@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #26b865;
+    font-family: ‘Times New Roman’, Times, serif; 
+    color: #fff;
+}
+select {
+    -webkit-appearance: none; /* Safari and Chrome */
+    -moz-appearance: none;  /* Firefox */
+    -ms-appearance:none; 
+    appearance: none;  /* 화살표 없애기 공통*/
+    outline: 0;
+    box-shadow: none;
+    border: 0!important; /*이전의 규칙을 재정의 (위험)*/
+    background: #ee0000eb; /*text 화면 색상*/
+    background-image: none;
+    flex: 1;
+    padding: 0, 5em;
+    color: #f9f5f5;
+    cursor: pointer; /*마우스 포인터 설정*/
+    font-size: 1.3rem;
+    font-family:'Courier New', Courier, monospace;
+}
+select::-ms-expand {
+ display: none;
+}
+.select{ 
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3; /*줄의 높이를 의미 (행간조정)*/
+    background: rgb(95 182 160);
+    overflow:hidden; /*컨텐츠 보여주기 방식*/
+    border-radius: .3em; /*테두리 둥글게 75%. 1 = 100%*/
+
+}
+.select::after{
+    content: '\25BC'; /*유니코드 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background:  #1a49c2; /*화살표 바깥쪽*/
+    cursor: pointer; /*없어도 poiter가 작동하는데 왜 넣었을까*/
+    pointer-events: none; /*auto, none,inherit 중 하나인데, default값이 auto였기에 그 기능을 꺼준 것 같다. */
+    transition: .25s all ease;
+}
+.select:hover::after{ /*커서를 갖다대면 색깔이 변한다.*/
+    color: #bb7526;
+}
