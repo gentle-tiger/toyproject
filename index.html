@@ -8,15 +8,91 @@
 </head>
 <body>
   <h1>Choose a weight</h1>
+
+  <div id="clock"></div>
+  <script src="js/clock.js"></script>
+
   <div class="select">
-    <select name="format" class="format">
-      <option selected disabled>Choose a weight</option>
-      <option value="">chest</option>
-      <option value="">back</option>
-      <option value="">legs</option>
-      <option value="">arms</option>
+    <select name="" class="main-city">
+      <option selected disabled>Choose a weight</option> /*기본값(selected)*/
+      <option >chest</option>
+      <option >back</option>
+      <option >legs</option>
+      <option >abdomen</option>
+      <option >shoulder</option>
+      <option >arms</option>
+      <option >AerobicExercise</option>
     </select>
   </div>
 
+  <select class="sub-city">
+
+  </select>
+<!--   
+  <div class="chest">
+    <select name="" id="chestPart" onchange="chestFn()">
+      <option selected disabled>Choose a chest</option> /*기본값(selected)*/
+      <option class="chest" value="체스트프레스" name="chestPress">체스트프레스</option>
+      <option class="chest" value="푸시업" name="push-up">푸시업</option>
+      <option class="chest" value="벤치프레스"name="benchPress">벤치프레스</option>
+      <option class="chest" value="딥스" name="deepth">딥스</option>
+    </select>
+  </div> -->
+
+  <script>
+      var BODYPART = document.querySelector('#bodyPart');
+
+BODYPART.onchange = function(){
+        var CHESTPART = document.querySelector('#chestPart');
+        var bodyOption = BODYPART.options[BODYPART.selectedIndex].innerHTML;
+
+      console.log(BODYPART.onchange);
+
+       var 변수명 = {
+        chest:['벤치프레스', '푸시업', '딥스', '페스트프레스', '인클라인벤치프레스', '인클라인덤벨프레스' ],
+        back:['데드리프트', '루마니안데드리프트', '렛풀다운', '풀업', '케이블시티드로우' ],
+        legs:['스쿼트', '런지', '레그프레스', '레그컬'],
+        abdomen:['행잉레그레이즈', '크런치', '하늘자전거'],
+        shoulder:['밀리터리프레스', '숄더프레스', '사이드래터럴레이즈', '프런트레이즈', '벤트오버레터럴레이즈'],
+        arns:['바벨컬(이두)','바벨컨(삼두)','덤벨컬(이두)','덤벨컬(삼두)','케이블푸시다운(삼두)'],
+        AerobicExercise:['런닝머신', '자전거', '달리기', '줄넘기']
+       }
+
+       switch (bodyOption){
+        case 'chset' : 
+            var 변수명 = 변수명s.chest;
+            break
+        case 'back' : 
+            var 변수명 = 변수명s.back;
+            break
+        case 'legs' : 
+            var 변수명 = 변수명s.legs;
+            break
+        case 'abdomen' : 
+            var 변수명 = 변수명s.abdomen;
+            break
+        case 'shoulder' : 
+            var 변수명 = 변수명s.shoulder;
+            break
+        case 'arns' : 
+            var 변수명 = 변수명s.arns;
+            break
+        case 'AerobicExercise' : 
+            var 변수명 = 변수명s.AerobicExercise;
+            break
+
+       }
+ }
+      // function  chestFn(){
+  //     var select = document.getElementById('chest');
+  //     var CHEST = (chest.options[chest.selectedIndex].value);
+  //    console.log(CHEST)
+
+
+// console.log(BODYPART.innerHTML);
+// console.log(CHESTPART.innerHTML);
+// console.log(BODYPART);
+// console.log(CHESTPART);
+</script>
 </body>
 </html>
