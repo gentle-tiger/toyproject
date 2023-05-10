@@ -1,6 +1,5 @@
 import "./styles/reset.css";
 import "./App.css";
-import Counter from "./components/Counter";
 import TodoList from "./components/TodoList";
 import Button from "./components/Button";
 import { AiOutlinePlus } from "react-icons/ai";
