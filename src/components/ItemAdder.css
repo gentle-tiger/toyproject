@@ -1,0 +1,9 @@
+.ItemAdder {
+  display: flex;
+  gap: 8px;
+}
+.ItemAdder .input {
+  flex: 1;
+  border: 1px solid lightblue;
+  border-radius: 4px;
+}
